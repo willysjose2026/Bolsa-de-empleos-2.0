@@ -21,6 +21,7 @@ class LoginController extends Controller
             else{
                 return array('success'=>false);
             }
-        }   
+        }
+        return array('success'=>false);   
     }
 }
