@@ -42,7 +42,7 @@ Route::delete('/jobs', [JobController::class, 'destroy']);
 #USER ROUTES
 Route::get('/login', [LoginController::class, 'Login']);
 Route::post('/signup', [SignUpController::class, 'SignUp']);
-Route::get('/users/user', [UserController::class, 'shows']);
+Route::get('/users/user', [UserController::class, 'show']);
 Route::post('/users', [UserController::class, 'store']);
 #Route::delete('/users', [UserController::class, 'destroy']);
 
