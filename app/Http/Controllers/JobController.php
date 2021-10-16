@@ -47,7 +47,7 @@ class JobController extends Controller
         $job->location = $request->location;
         $job->email = $request->email;
         $job->description = $request->description;
-        $job->how_to_play = $request->how_to_play;
+        $job->how_to_applay = $request->how_to_applay;
 
         $job->save();
 
