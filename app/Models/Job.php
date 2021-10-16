@@ -21,6 +21,6 @@ class Job extends Model
         'location',
         'email',
         'description',
-        'how_to_play'
+        'how_to_applay'
     ];
 }
