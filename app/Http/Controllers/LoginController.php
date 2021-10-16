@@ -15,7 +15,7 @@ class LoginController extends Controller
             $pass_validation = password_verify($credentials->password, $user->password);
 
             if($pass_validation){
-                return array('success'=>true);
+                return array('success'=>true, 'user' => $user);
             }
             
             else{

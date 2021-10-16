@@ -67,10 +67,10 @@ class UserController extends Controller
 
                 $user->save();
 
-                return array('success' => true, 'message' => 'account created successfully');
+                return $user;
             }
         } catch (Exception $e) {
-            return array('success' => false, 'message' => 'error');
+            return array('success' => false, 'message' => $e);
 
         }
     }
