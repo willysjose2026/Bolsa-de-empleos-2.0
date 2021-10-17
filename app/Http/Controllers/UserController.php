@@ -51,28 +51,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user = $this->find($request->username);
-
         try {
-            if($user){
-                return $user;
+            $user = new User();
+            $user->first_name = $request->first_name;
+            $user->last_name = $request->last_name;
+            $user->user_type_id = $request->user_type_id;
+            $user->username = $request->username;
+            $user->email = $request->email;
+            $user->password = password_hash($request->password, PASSWORD_DEFAULT);
 
-            }else{
-                $user = new User();
-                $user->first_name = $request->first_name;
-                $user->last_name = $request->last_name;
-                $user->user_type_id = $request->user_type_id;
-                $user->username = $request->username;
-                $user->email = $request->email;
-                $user->password = password_hash($request->password, PASSWORD_DEFAULT);
+            $user->save();
 
-                $user->save();
-
-                return $user;
-            }
-        } catch (Exception $e) {
+            return $user;
+        }
+        catch (Exception $e) {
             return array('success' => false, 'message' => $e);
-
         }
     }
 
