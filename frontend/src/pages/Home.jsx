@@ -18,7 +18,7 @@ const Home = (prop) => {
   return (
     <div>
       <Navbar getSearchJobs={getSearchJobs} allValue={allValue} />
-      {!search.filter((filt) => Object.keys(filt).length !== 0) ? (
+      {search.filter((filt) => Object.keys(filt).length !== 0) ? (
         <div className="container-fluid mt-5">
           <Jobs allValue={allValue} categories={categories} Limit={minLimit} />
           <Footer />
